@@ -1,0 +1,211 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt, a4paper]{article}
+\usepackage{mathptmx}
+\usepackage{anyfontsize}
+\usepackage{t1enc}
+
+% LAYOUT
+%--------------------------------
+% Margins
+\usepackage{geometry}
+% Sets specific for the page. Note the left/right difference is to allow for the wide left margin notes
+\geometry{letterpaper, left=50mm, right=20mm, top=13mm, bottom=13mm}
+\usepackage{scrextend}
+
+% Do not indent paragraphs
+\setlength\parindent{0in}
+
+% TYPOGRAPHY
+%--------------------------------
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+% converts LaTeX specials (quotes, dashes etc.) to Unicode
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont [Ligatures={Common}]{Minion Pro}
+% Cool ampersand
+\newcommand{\amper}{{\fontspec[Scale=.95]{Minion Pro}\selectfont\itshape\&}}
+
+% Aligns along left axis (Makes the right side the ragged side)
+\raggedright
+
+% MARGIN NOTES
+%--------------------------------
+% Use the marginnote package to write marginnotes
+\usepackage{marginnote}
+% Set the command \note to create a marginnote
+\newcommand{\note}[1]{\marginnote{\scriptsize #1}}
+% Sets the marginnotes to be ragged left
+\renewcommand*{\raggedleftmarginnote}{}
+\pagenumbering{gobble}
+
+% HEADINGS
+%--------------------------------
+\usepackage{sectsty}
+\usepackage[normalem]{ulem}
+
+\sectionfont{\rmfamily\mdseries\large\textbf}
+\subsectionfont{\rmfamily\mdseries\scshape\normalsize}
+\subsubsectionfont{\rmfamily\bfseries\upshape\normalsize}
+
+% PDF SETUP
+%--------------------------------
+\usepackage{hyperref}
+\hypersetup
+{
+  pdfauthor={Karishma Reddy Khan},
+  pdfsubject={Karishma Reddy Khan's Resume},
+  pdftitle={Karishma Reddy Khan's Resume},
+  colorlinks, breaklinks, xetex, bookmarks,
+  filecolor=black,
+  urlcolor=[rgb]{0.117,0.682,0.858},
+  linkcolor=[rgb]{0.117,0.682,0.858},
+  citecolor=[rgb]{0.117,0.682,0.858}
+}
+
+% LIST ENVIRONMENT
+%--------------------------------
+\usepackage{paralist}
+\setdefaultleftmargin{.5cm}{2cm}{}{}{}{}
+\renewenvironment{itemize}[1]{\begin{compactitem}#1}{\end{compactitem}}
+
+% MARGIN ENVIRONMENT
+%--------------------------------
+\newenvironment{setmargins}[1]
+{
+% Determines whether the margin is on the left or right
+\reversemarginpar
+% Sets the margin width
+\marginparwidth=35mm
+% Sets the separation between the margin note and the body of the text
+\setlength{\marginparsep}{5mm}
+% Creates a note with the specified size which holds the variable sent in as one. This is the section heading
+\note{\fontsize{11}{12}\selectfont\textbf{#1\\[1ex]}}
+\ \\
+% Creates the line underneath the section heading
+% Note that a letterpaper has a paper width of 216mm
+% We have a left margin of 50mm with 35mm margin note width and 5mm separation so a starting point of -40leaves a space of 10mm from the edge
+% We want the same separation on the other end so we need a length of 216-20 = 196mm
+\noindent\hspace{-40mm}\rule{196mm}{0.4pt}\\
+
+}
+
+% DOCUMENT
+%--------------------------------
+\begin{document}
+
+\begin{addmargin}[-30mm]{0mm}
+  \begin{center}
+    {\LARGE Karishma Reddy Khan}\\[.2cm]
+
+    \href{mailto:kreddykhan@brandeis.edu}{kreddykhan@brandeis.edu}\\
+    \href{https://sites.google.com/a/mtholyoke.edu/cs-243-spring-15---reddy22k/home}{sites.google.com/karishmareddykhan}\\
+    \href{https://www.linkedin.com/pub/karishma-reddy-khan/a8/604/77b}{linkedin.com/in/karishmareddykhan}\\
+    \href{https://github.com/kreddykhan}{github.com/kreddykhan}
+  \end{center}
+\end{addmargin}
+\ \\[.3cm]
+
+\begin{setmargins}{Education}
+  \note{\textbf{\small Graduation: May 2021}}
+  \textbf{Brandeis University | Waltham, MA}\\
+  PhD | Computer Science\\[.2cm]
+
+  \note{\textbf{\small Graduation: May 2017}}
+  \textbf{Brandeis University | Waltham, MA}\\
+  Master of Arts | Computer Science\\[.2cm]
+
+  \note{\textbf{\small Graduation: May 2015}}
+  \textbf{Mount Holyoke College | South Hadley, MA}\\
+  Bachelor of Arts | Magna Cum Laude\\
+  Majors: Physics and Theatre | Minor: Electrical Engineering
+\end{setmargins}
+\ \\
+
+\begin{setmargins}{Experience}
+  \note{\textbf{\small Aug 2015--Dec 2016}}
+  \textbf{Brandeis University Computer Science Department | Waltham, MA} \\
+  \emph{Head Teaching Assistant: Discrete Structures, Scientific Data Processing, Software Engineering Scalability}
+  \ \\[.3cm]
+
+  \note{\textbf{\small June 2016--Aug 2016}}
+  \textbf{High Energy Physics Lab, Brandeis University Physics Department | Waltham, MA} \\
+  \emph{Programmer}
+  \begin{itemize}
+    \item Developed a Matlab GUI to simulate experiments to map the human eye
+    \item Developed image stitching protocols to stitch together experimental data results
+  \end{itemize}
+  \ \\[.3cm]
+
+  \note{\textbf{\small Sep 2015--Dec 2015}}
+  \textbf{SAXSLAB U.S.A. | Northampton, MA} \\
+  \emph{Developer}
+  \begin{itemize}
+    \item Company manufactures X-Ray scattering devices and analyzes scattering data
+    \item Updated pre-existing Matlab 2012a GUI code to be compatible with Matlab 2015a
+  \end{itemize}
+  \ \\[.3cm]
+
+  \note{\textbf{\small June 2015--Aug 2015}}
+  \textbf{Molmex Scientific | Northampton, MA} \\
+  \emph{Intern}
+  \begin{itemize}
+    \item Company designed and manufactured Small Angle X-Ray scattering devices
+    \item Designed 3D models in SolidWorks which are currently in use on the devices
+    \item Developed code in spec, a C-like software, to improve the user interface on scattering devices
+  \end{itemize}
+  \ \\[.3cm]
+
+  \note{\textbf{\small May 2012--May 2015}}
+  \textbf{Mount Holyoke College, Atomic Force Microscopy Lab | South Hadley, MA} \\
+  \emph{Research Fellow with Dr. Katherine Aidala}
+  \begin{itemize}
+    \item Worked with Quantum Dots, nanoscale semi-conductors with potential solar cell applications
+    \item Studied crack formation in sub-monolayers of PbS Quantum Dots
+  \end{itemize}
+  \ \\[.3cm]
+
+  \note{\textbf{\small June 2013--Aug 2013}}
+  \textbf{Fermi National Accelerator Lab | Batavia, IL} \\
+  \emph{Research Student}
+  \begin{itemize}
+    \item Worked on Wire Position Monitors (WPMs) used to detect motion in Linear Accelerator Cavities
+    \item Developed a Matlab Graphical User Interface to analyze data from WPMs that is still in use
+    \item Demonstrated that Matlab is compatible with Fermilab's accelerator network
+  \end{itemize}
+\end{setmargins}
+\ \\
+
+\begin{setmargins}{Projects}
+  \note{\textbf{\small Sep 2016 -- Ongoing}}
+  \textbf{NanoTwitter:} Implementation of a small scale Twitter app as a study in scalability\\
+  \note{\textbf{\small June 2016 -- Ongoing}}
+  \textbf{CCD:} Simulates the process of taking a photograph with a CCD camera using bining and integration\\
+  \note{\textbf{\small Jan 2015 -- May 2015}}
+  \textbf{Turtle 2.0:} Remote control car with object avoidance capable of dynamic communication\\
+  \note{\textbf{\small Jan 2015 -- May 2015}}
+  \textbf{GPS:} Robotic car capable of receiving and navigating towards GPS co-ordinates\\
+\end{setmargins}
+\ \\
+
+
+\begin{setmargins}{Skills}
+  \textbf{Programming:} Java, Matlab, Ruby, Sinatra, Scheme, Ruby on Rails, JavaScript, HTML, \LaTeX, Git, spec\\ %Linux, UNIX, Assembly
+  \textbf{Lab Skills:} Atomic Force Microscopy, Asylum software, spin coating, plasma cleaning, oscilloscopes\\
+  \textbf{Hardware:} Arduino, SolidWorks, Blender, analog and digital circuitry, soldering, machining
+\end{setmargins}
+% \ \\
+
+% \begin{setmargins}{Coursework}
+%  \textbf{Computer Science:} Scalability, 3D Animation, Operating Systems, Software Engineering Capstone, Functional Programming, Artificial Intelligence, Data Structures, Java Programming, Robotics \\
+%  \textbf{Physics:} Nanoelectronics, Circuit Analysis, Electronics, Statistical Mechanics, Quantum Mechanics, Electromagnetism
+% \end{setmargins}
+% \ \\
+
+% \begin{setmargins}{Interests}
+%   Theatre, particularly stage management, writing and directing, comic books, video games, travel\\
+% \end{setmargins}
+
+\end{document}
