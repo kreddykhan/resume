@@ -1,3 +1,4 @@
+% https://github.com/plorcupine/latex-fontawesome/blob/master/fontawesome.sty
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 
@@ -5,6 +6,8 @@
 \usepackage{mathptmx}
 \usepackage{anyfontsize}
 \usepackage{t1enc}
+\usepackage{fontawesome}
+\usepackage{xcolor}
 
 % LAYOUT
 %--------------------------------
@@ -60,7 +63,7 @@
   pdftitle={Karishma Reddy Khan's Resume},
   colorlinks, breaklinks, xetex, bookmarks,
   filecolor=black,
-  urlcolor=[rgb]{0.117,0.682,0.858},
+  urlcolor=[rgb]{0.117,0.682,1},
   linkcolor=[rgb]{0.117,0.682,0.858},
   citecolor=[rgb]{0.117,0.682,0.858}
 }
@@ -82,7 +85,7 @@
 % Sets the separation between the margin note and the body of the text
 \setlength{\marginparsep}{5mm}
 % Creates a note with the specified size which holds the variable sent in as one. This is the section heading
-\note{\fontsize{11}{12}\selectfont\textbf{#1\\[1ex]}}
+\note{\fontsize{11}{12}\selectfont\textbf{\Large #1\\[1ex]}}
 \ \\
 % Creates the line underneath the section heading
 % Note that a letterpaper has a paper width of 216mm
@@ -99,11 +102,12 @@
 \begin{addmargin}[-30mm]{0mm}
   \begin{center}
     {\LARGE Karishma Reddy Khan}\\[.2cm]
-
+    % \faEnvelope \enskip \href{mailto:kreddykhan@brandeis.edu}{kreddykhan@brandeis.edu}\\
+    % \faGithubAlt \enskip \href{https://github.com/kreddykhan}{kreddykhan}\\
+    % \faLinkedinSquare \enskip \href{https://www.linkedin.com/pub/karishma-reddy-khan/a8/604/77b}{karishmareddykhan}\\
     \href{mailto:kreddykhan@brandeis.edu}{kreddykhan@brandeis.edu}\\
     \href{https://github.com/kreddykhan}{github.com/kreddykhan}\\
-    \href{https://www.linkedin.com/pub/karishma-reddy-khan/a8/604/77b}{linkedin.com/in/karishmareddykhan}\\
-    \href{https://sites.google.com/a/mtholyoke.edu/cs-243-spring-15---reddy22k/home}{sites.google.com/karishmareddykhan}
+    \href{https://www.linkedin.com/pub/karishma-reddy-khan/a8/604/77b}{linkedin.com/in/karishmareddykhan}
 
   \end{center}
 \end{addmargin}
@@ -126,17 +130,17 @@
 \ \\
 
 \begin{setmargins}{Experience}
-  \note{\textbf{\small Aug 2015--Dec 2016}}
-  \textbf{Brandeis University Computer Science Department | Waltham, MA} \\
-  \emph{Head Teaching Assistant: Discrete Structures, Scientific Data Processing, Software Engineering Scalability}
-  \ \\[.3cm]
+  % \note{\textbf{\small Aug 2015--Dec 2016}}
+  % \textbf{Brandeis University Computer Science Department | Waltham, MA} \\
+  % \emph{Head Teaching Assistant: Discrete Structures, Scientific Data Processing, Software Engineering Scalability}
+  % \ \\[.3cm]
 
   \note{\textbf{\small June 2016--Aug 2016}}
   \textbf{High Energy Physics Lab, Brandeis University Physics Department | Waltham, MA} \\
   \emph{Programmer}
   \begin{itemize}
     \item Developed a Matlab GUI to simulate experiments to map the human eye
-    \item Developed image stitching protocols to stitch together experimental data results
+    \item Developed image stitching algorithms to stitch together experimental data results
   \end{itemize}
   \ \\[.3cm]
 
@@ -155,7 +159,7 @@
   \begin{itemize}
     \item Company designed and manufactured Small Angle X-Ray scattering devices
     \item Designed 3D models in SolidWorks which are currently in use on the devices
-    \item Developed code in spec, a C-like software, to improve the user interface on scattering devices
+    \item Improved user interface of scattering devices using \emph{spec}, a C-like language
   \end{itemize}
   \ \\[.3cm]
 
@@ -163,7 +167,7 @@
   \textbf{Mount Holyoke College, Atomic Force Microscopy Lab | South Hadley, MA} \\
   \emph{Research Fellow with Dr. Katherine Aidala}
   \begin{itemize}
-    \item Worked with Quantum Dots, nanoscale semi-conductors with potential solar cell applications
+    \item Researched solar cell applications of nanoscale semi-conductors called Quantum Dots
     \item Studied crack formation in sub-monolayers of PbS Quantum Dots
   \end{itemize}
   \ \\[.3cm]
@@ -172,8 +176,8 @@
   \textbf{Fermi National Accelerator Lab | Batavia, IL} \\
   \emph{Research Student}
   \begin{itemize}
-    \item Worked on Wire Position Monitors (WPMs) used to detect motion in Linear Accelerator Cavities
-    \item Developed a Matlab Graphical User Interface to analyze data from WPMs that is still in use
+    \item Worked with Wire Position Monitors (WPMs) used to detect motion in Linear Accelerator Cavities
+    \item Developed a Matlab GUI to analyze data from WPMs that is still in use
     \item Demonstrated that Matlab is compatible with Fermilab's accelerator network
   \end{itemize}
 \end{setmargins}
@@ -181,13 +185,13 @@
 
 \begin{setmargins}{Projects}
   \note{\textbf{\small Oct 2016 -- Ongoing}}
-  \textbf{Quantum Escapement:} Escape the room style game built using Blender and Python\\
+  \href{https://github.com/kreddykhan/quantum-escapement}{\textcolor{black}{\faGithubAlt}} \enskip \textbf{Quantum Escapement:} Escape the room style game built using Blender and Python\\
   \note{\textbf{\small Sep 2016 -- Ongoing}}
-  \textbf{NanoTwitter:} Small scale Twitter app built using Ruby and Sinatra as a study in scalability\\
+  \href{https://github.com/kreddykhan/nanotwitter}{\textcolor{black}{\faGithubAlt}} \enskip \textbf{NanoTwitter:} Small scale Twitter app built using Ruby and Sinatra as a study in scalability\\
   \note{\textbf{\small June 2016 -- Ongoing}}
-  \textbf{CCD:} Matlab program that simulates a CCD camera using pixel bining and Riemann sums\\
+  \href{https://github.com/kreddykhan/CCD-Camera-Simulator}{\textcolor{black}{\faGithubAlt}} \enskip \textbf{CCD:} Matlab program that simulates a CCD camera using pixel bining and Riemann sums\\
   \note{\textbf{\small Jan 2015 -- May 2015}}
-  \textbf{Turtle 2.0:} Arduino robot with IR driven object avoidance and RF dynamic communication\\
+  \href{https://sites.google.com/a/mtholyoke.edu/cs-243-spring-15---reddy22k/home/project-2-remote-control-car}{\textcolor{black}{\faGlobe}} \enskip \textbf{Turtle 2.0:} Arduino robot with IR driven object avoidance and RF dynamic communication\\
   % \note{\textbf{\small Jan 2015 -- May 2015}}
   % \textbf{GPS:} Robotic car capable of receiving and navigating towards GPS co-ordinates\\
 \end{setmargins}
@@ -195,9 +199,15 @@
 
 
 \begin{setmargins}{Skills}
-  \textbf{Programming:} Java, Matlab, Ruby, Sinatra, Scheme, Rails, JavaScript, HTML, \LaTeX, Git, Python, spec\\ %Linux, UNIX, Assembly
-  \textbf{Lab Skills:} Atomic Force Microscopy, Asylum software, spin coating, plasma cleaning, oscilloscopes\\
-  \textbf{Hardware:} Arduino, SolidWorks, Blender, analog and digital circuitry, soldering, machining
+  \note{\textbf{\small Software}}
+  \textbf{Languages:} Java, Matlab, Ruby, Scheme, Python, JavaScript, HTML, spec\\
+  \textbf{Frameworks:} Sinatra, Ruby on Rails\\
+  \textbf{3D Animation:} SolidWorks, Blender\\
+  \textbf{Tooling:} Git, \LaTeX, MySQL
+  \ \\[.3cm]
+  \note{\textbf{\small Hardware}}
+  \textbf{Electronics:} Arduino, analog and digital circuitry, oscilloscopes, soldering\\
+  \textbf{Lab Skills:} Atomic Force Microscopy, spin coating, plasma cleaning, machining
 \end{setmargins}
 % \ \\
 
